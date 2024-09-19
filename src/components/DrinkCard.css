@@ -1,0 +1,9 @@
+li {
+  list-style: none;
+}
+
+li img {
+  width: 200px;
+  border-radius: 8px;
+  object-fit: contain;
+}
