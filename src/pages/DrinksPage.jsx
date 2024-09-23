@@ -20,12 +20,15 @@ const DrinksPage = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
+  
     const filterData = data.filter(
-      (each) => each.strDrinkd === input.toLowerCase()
+      (each) => each.strDrink.toLowerCase().includes(input.toLowerCase())
     );
-    setData(filterData);
-  }, [input]);
+
+    
+    
+    
+  
   return (
     <div className="drinks_page-container">
       <h1>Drink Mixer</h1>
@@ -36,7 +39,7 @@ const DrinksPage = () => {
         placeholder="seach some thing"
       />
       <ul>
-        {data.map((each, index) => (
+        {filterData.map((each, index) => (
           <DrinkCard key={index} data={each} />
         ))}
       </ul>
